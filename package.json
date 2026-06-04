@@ -1,0 +1,28 @@
+{
+  "name": "gnosis-safe",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Tx shortcuts on Gnosis Safe multisig",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tangent-labs/gnosis-safe.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Tangent-labs/gnosis-safe/issues"
+  },
+  "homepage": "https://github.com/Tangent-labs/gnosis-safe#readme",
+  "keywords": [],
+  "dependencies": {
+    "@safe-global/api-kit": "4.1.0",
+    "@safe-global/protocol-kit": "7.1.0",
+    "@tangent/defi-resources": "github:Tangent-labs/defi-resources#main",
+    "dotenv": "17.4.2",
+    "viem": "2.48.8"
+  }
+}
