@@ -14,11 +14,7 @@ export async function main() {
     const erc20Abi = ERC20.abi;
     const marketAbi = MarketExternalActions.abi;
     const DAO = "0x461B62CB3A7e9Df8f800aE058AE92F855F2c27Ca"
-    const markets = [
-        MARKETS.CURVE_GAUGE.RLUSD_USDC, stakeMarkets.BOLD_USDC, stakeMarkets.USDT_crvUSD, stakeMarkets.eUSD_USDC,
-        stakeMarkets.frxUSD_OUSD, stakeMarkets.frxUSD_sDOLA, stakeMarkets.frxUSD_sUSDS, stakeMarkets.frxUSD_scrvUSD,
-        stakeMarkets.reUSD_scrvUSD, cvxFxnMarkets.fxUSD_USDC, cvxFxnMarkets.reUSD_fxUSD
-    ]
+    const markets = [stakeMarkets.reUSD_sDOLA]
     const publicClient = createPublicClient({
         chain: mainnet,
         transport: http('https://eth-mainnet.g.alchemy.com/v2/zCrDEsqvlSdKaF_Tv0q4Q'),
@@ -39,8 +35,6 @@ export async function main() {
             functionName: "approve",
             args: [market, balance]
         }))
-
-
 
         // Deposit 
         const depositData = encodeFunctionData(({

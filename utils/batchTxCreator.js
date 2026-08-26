@@ -1,6 +1,7 @@
 import SafeApiKit from "@safe-global/api-kit";
 import Safe from "@safe-global/protocol-kit";
 import { privateKeyToAccount } from "viem/accounts";
+import { PROD_ADDRESSES } from "../params/prod_addresses.js";
 
 export async function batchTxCreator(safeTransactions) {
     const safeApiService = new SafeApiKit({
@@ -9,7 +10,7 @@ export async function batchTxCreator(safeTransactions) {
 
     const rpcUrl = "https://eth-mainnet.g.alchemy.com/v2/zCrDEsqvlSdKaF_Tv0q4Q";
     const privateKey = process.env.SIGNER;
-    const safeAddress = "0x536d4e9C0944dE2aC6657d610Aa99fA5e97Ce493";
+    const safeAddress = PROD_ADDRESSES.DAO;
 
     const account = privateKeyToAccount(privateKey);
 
@@ -27,7 +28,7 @@ export async function batchTxCreator(safeTransactions) {
     const safeTx = await safeSdk.createTransaction({
         transactions: safeTransactions,
         options: {
-            nonce: nextNonce - 1
+            nonce: nextNonce
         }
     });
 

@@ -56,6 +56,32 @@ export const IR_PARAMS_HEC_USD_S = {
     pInf: 990_000,
     pMax: 995000,
     a1: 600,
-    a2: 2300,
+    a2: 2000,
+    k: 25,
+};
+
+
+export const IR_PARAMS_HEC_VOL_BASE = {
+    isHEC: true,
+    rMin: 0,
+    rMax: 160_944,
+    pMin: 980_000,
+    pInf: 992_500,
+    pMax: 995_000,
+    a1: 625,
+    a2: 1800,
+    k: 130,
+};
+
+export const IR_PARAMS_LEC_VOL_BASE = {
+    isHEC: true,
+    rMin: 3440,
+    rMax: 160_944,
+    pMin: 980_000,
+    pInf: 994_000,
+    pMax: 1_000_000,
+    a1: 900,
+    a2: 4225,
     k: 50,
 };
+

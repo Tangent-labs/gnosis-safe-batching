@@ -11,8 +11,7 @@ export async function main() {
     const MARKETS = PROD_ADDRESSES.MARKETS
 
     const marketAbi = MarketExternalActions.abi;
-    const DAO = "0x461B62CB3A7e9Df8f800aE058AE92F855F2c27Ca"
-    const markets = [MARKETS.CURVE_GAUGE.PYUSD_USDC]
+    const markets = [MARKETS.STAKEDAO_VAULT.cbBTC_WBTC]
     const publicClient = createPublicClient({
         chain: mainnet,
         transport: http('https://eth-mainnet.g.alchemy.com/v2/zCrDEsqvlSdKaF_Tv0q4Q'),
@@ -30,15 +29,17 @@ export async function main() {
                 market,
                 [
                     false,
-                    2_956,
-                    109_861,
+                    3440,
+                    160944,
                     980_000,
-                    985_000,
+                    994000,
                     1_000_000,
-                    1000,
-                    2025,
-                    1_225
+                    900,
+                    4225,
+                    50
                 ]
+
+
             ]
         }))
 

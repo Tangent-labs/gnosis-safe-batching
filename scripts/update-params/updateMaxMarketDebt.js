@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { createPublicClient, encodeFunctionData, http, parseEther } from "viem";
+import { createPublicClient, encodeFunctionData, getAddress, http, parseEther } from "viem";
 import { mainnet } from 'viem/chains';
 import MarketExternalActions from "../../abis/MarketExternalActions.json" with { type: "json" };
 import { PROD_ADDRESSES } from "../../params/prod_addresses.js";
@@ -11,14 +11,9 @@ export async function main() {
     const cvxFxnMarkets = MARKETS.CONVEX_FXN
 
     const marketAbi = MarketExternalActions.abi;
-    const markets = [
-        MARKETS.CURVE_GAUGE.PYUSD_USDC, MARKETS.CURVE_GAUGE.RLUSD_USDC,
-        stakeMarkets.frxUSD_scrvUSD, cvxFxnMarkets.fxUSD_USDC,
-    ]
+    const markets = [getAddress(stakeMarkets.BOLD_USDC)]
 
-    const newCaps = [
-        parseEther("375000"), parseEther("375000"), parseEther("375000"), parseEther("375000"),
-    ]
+    const newCaps = [parseEther("500000")]
 
     const publicClient = createPublicClient({
         chain: mainnet,

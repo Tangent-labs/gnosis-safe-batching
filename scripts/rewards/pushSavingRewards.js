@@ -8,7 +8,7 @@ import { PROD_ADDRESSES } from "../../params/prod_addresses.js";
 import { batchTxCreator } from "../../utils/batchTxCreator.js";
 
 export async function main() {
-    const amount = 750
+    const amount = 1750
 
     const weiAmount = parseEther(amount.toString())
     const publicClient = createPublicClient({
@@ -49,7 +49,6 @@ export async function main() {
     })
 
     await batchTxCreator(txContent)
-
 
 }
 
