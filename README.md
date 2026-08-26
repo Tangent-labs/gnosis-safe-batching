@@ -25,8 +25,6 @@ Every script builds one or more encoded contract calls with `viem` and passes th
 3. Batches the transactions into a single Safe transaction, hashes and signs it.
 4. Proposes the signed transaction to the Safe Transaction Service via `SAFE_KEY`.
 
-Addresses, IR (interest rate) curve params, and RC (risk/collateral) params live in [`params/`](params/) and are imported by the scripts.
-
 ## Layout
 
 - `abis/` — contract ABIs
